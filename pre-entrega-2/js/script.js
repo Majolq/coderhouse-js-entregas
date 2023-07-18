@@ -107,7 +107,7 @@ function eliminar_producto() {
 
 function mostrar_productos() {
   if (existen_productos()) {
-    let resp = prompt('La info se mostrara ordenada por precio.\n Desea verla en forma Ascendente (A) o Desendente (D)').toUpperCase();
+    let resp = prompt('La info se mostrara ordenada por precio.\n Deseas verla en forma Ascendente (A) o Desendente (D)').toUpperCase();
     if (resp == 'A') {
       array_productos.sort((a, b) => {
         if (a.precio > b.precio) {
@@ -160,7 +160,7 @@ function existen_productos() {
 
 function aplicar_descuento() {
   if (existen_productos) {
-    let descuento = parseInt(prompt('Ingrese el descuento a aplicar'));
+    let descuento = parseInt(prompt('Ingresá el descuento a aplicar'));
 
     if (!isNaN(descuento)) {
       let desc = 1 - descuento / 100;
