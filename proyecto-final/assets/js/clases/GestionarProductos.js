@@ -337,23 +337,27 @@ class GestionarProductos {
   }
 
   eliminarProducto(id) {
-    //si confima proceso a eliminar
+    // Preguntamos al usuario si desea continuar con el proceso de eliminación
     Swal.fire({
-      title: 'Esta seguro de eliminar el producto ?',
+      title: 'Estás segura/o que deseas eliminar el producto?',
       showCancelButton: true,
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminarlo',
-      cancelButtonText: 'Cancelar, toque sin querer!',
+      confirmButtonColor: '#00355e',
+      cancelButtonColor: '#e65757',
+      confirmButtonText: 'Si, eliminalo',
+      cancelButtonText: 'No, cancela',
     }).then((result) => {
       if (result.isConfirmed) {
         carrito = carrito.filter((articulo) => articulo.id != id);
         this.actualizarCarrito();
 
-        //notidico de la eliminacion
+        // Notificación de la eliminación del producto
         Toastify({
-          text: 'Producto eliminado con exito',
+          text: 'Eliminamos el producto con exito',
           duration: 2000,
           gravity: 'bottom',
+          style: {
+            background: '#00355e',
+          },
         }).showToast();
       }
     });

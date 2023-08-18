@@ -19,7 +19,7 @@ document.querySelector('#buscar').addEventListener('keyup', () => {
   if (q.length >= 2) {
     gestor.buscar(q);
   } else {
-    gestor.mostrarHeader('Todos los productos en stock');
+    gestor.mostrarHeader('Todos nuestros productos');
     gestor.cargarProductos(productos);
   }
 });
@@ -29,14 +29,14 @@ document.querySelector('#buscar').addEventListener('keyup', () => {
  * @param {*} id  id del producto a agregar
  */
 function addCarrito(id) {
-  const prod = document.querySelector('#row_' + id);
+  const prod = document.querySelector('#card_' + id);
 
-  let titulo = prod.querySelector('h3').textContent;
+  let name = prod.querySelector('h4').textContent;
   //elimino el simbolo $ para poder convertir a numero
-  let precio = prod.querySelector('.precio').textContent.substring(1, prod.querySelector('.precio').textContent.length);
+  let price = prod.querySelector('.price').textContent.substring(1, prod.querySelector('.price').textContent.length);
   let img = prod.querySelector('img').src;
 
-  let producto = new Producto(id, titulo, precio, img);
+  let producto = new Producto(id, name, price, img);
 
   gestor.addCart(producto);
 }
@@ -60,3 +60,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // var splide = new Splide('.splide');
   splide.mount();
 });
+
+/**
+ * llamar al archivo json
+ * @param {String}
+ */
+fetch('/assets/json/products.json')
+  .then((response) => response.json())
+  .then((data) => {
+    // Aquí puedes trabajar con los datos del JSON
+    console.log(data.productos); // Mostrará la matriz de productos en la consola
+  })
+  .catch((error) => {
+    console.error('Error al cargar el archivo JSON:', error);
+  });
