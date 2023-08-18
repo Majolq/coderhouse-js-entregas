@@ -10,4 +10,4 @@ Alumna: Majo López Quintana
 
 ARCHIVOS DE ENTREGAS:
 
-- Pre Entrega 1: /pre-entrega-1
+- Carpeta: proyecto-final

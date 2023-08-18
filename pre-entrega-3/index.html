@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-entrega 3 | JavaScript</title>
+
+    <!-- Bootstrap 5.2.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <!-- Font Awesome 6.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS  -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- Sweet Alert 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css" integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  </head>
+
+  <body>
+    <header class="header d-flex align-items-center justify-content-center fixed-top">
+      <div class="container d-flex align-items-center">
+        <div class="col-3 d-flex align-items-center justify-content-start">
+          <img src="./assets/images/logo.gif" alt="" width="150" height="50" alt="" />
+        </div>
+
+        <div class="col-6 d-flex align-items-center justify-content-center">
+          <div class="header-buscador-marco">
+            <input type="text" name="buscar" id="buscar" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <div class="col-3 d-flex align-items-center justify-content-end">
+          <a class="cart position-relative d-inline-flex" aria-label="View your shopping cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <i class="fa-solid fa-cart-shopping position-relative" id="iconoCarrito">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="badgeCarrito"> 0 </span>
+            </i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h2 class="title" id="headerProductos">Productos destacados</h2>
+      <ul class="list" id="productos">
+        <li class="item">
+          <article class="card">
+            <div class="image">
+              <img src="./assets/images/products/notebook.jpg" alt="JavaScript" />
+            </div>
+            <div class="text">
+              <h3 class="brand">Apple</h3>
+              <h4 class="model">Notebook</h4>
+              <h5 class="price">$80000</h5>
+            </div>
+          </article>
+        </li>
+
+        <li class="item">
+          <article class="card">
+            <div class="image">
+              <img src="./assets/images/products/phone.jpg" alt="JavaScript" />
+            </div>
+            <div class="text">
+              <h4 class="brand">Apple</h4>
+              <h4 class="model">Celular</h4>
+              <h5 class="price">$60000</h5>
+            </div>
+          </article>
+        </li>
+
+        <li class="item">
+          <article class="card">
+            <div class="image">
+              <img src="./assets/images/products/smartwatch.jpg" alt="JavaScript" />
+            </div>
+            <div class="text">
+              <h3 class="brand">Apple</h3>
+              <h4 class="model">Smartwatch</h4>
+              <h5 class="price">$20000</h5>
+            </div>
+          </article>
+        </li>
+
+        <li class="item">
+          <article class="card">
+            <div class="image">
+              <img src="./assets/images/products/airpods.jpg" alt="JavaScript" />
+            </div>
+            <div class="text">
+              <h3 class="brand">Apple</h3>
+              <h4 class="model">Auriculares</h4>
+              <h5 class="price">$10000</h5>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </main>
+
+    <script src="./assets/js/productos/Producto.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
