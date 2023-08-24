@@ -184,20 +184,20 @@ class GestionarProductos {
         prod.id = 'card_' + id;
         prod.innerHTML = `
             <article class="card">
-                <div class="image">
-                    <img src="./assets/images/products/${img}" alt="JavaScript" />
-                </div>
-                <div class="text">
-                    <div class="info-content">
-                        <h3 class="brand">${brand}</h3>
-                        <h4 class="model">${name}</h4>
-                        <p class="description">${description.substring(0, 120)}</p>
-                    </div>
-                    <div class="price-btn-content">
-                        <h5 class="price">$${price}</h5>
-                        <a href="javascript:addCarrito(${id})" class="button-add">Agregar al carrito</a>
-                    </div>
-                </div>
+              <div class="image">
+                  <img src="./assets/images/products/${img}" alt="JavaScript" />
+              </div>
+              <div class="text">
+                  <div class="info-content">
+                      <h3 class="brand">${brand}</h3>
+                      <h4 class="model">${name}</h4>
+                      <p class="description">${description.substring(0, 120)}</p>
+                  </div>
+                  <div class="price-btn-content">
+                      <h5 class="price">$${price}</h5>
+                      <a href="javascript:addCarrito(${id})" class="button-add">Agregar al carrito</a>
+                  </div>
+              </div>
             </article>
         `;
 
@@ -268,7 +268,7 @@ class GestionarProductos {
     let total = 0;
 
     carrito.forEach((producto) => {
-      const { id, brand, name, price, img, amount } = producto;
+      const { id, brand, name, price, img, amount, description } = producto;
 
       const row = document.createElement('div');
       row.classList.add('row');
@@ -276,28 +276,26 @@ class GestionarProductos {
 
       row.innerHTML = `
                         <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            <img src="${img}" width="80"/>
+                            <img src="./assets/images/products/${img}" width="80"/>
                         </div>
 
                         <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            ${name}
+                            <h4 class="model">${name}</h4>
                         </div>
 
                         <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
-                            $ ${price}
+                            <h5 class="price">$${price}</h5>
                         </div>  
                         
                         <div class="col-1 d-flex align-items-center justify-content-end p-2 border-bottom">
-                            ${amount}
+                            <p class="amount">${amount}</p>
                         </div>
 
                         <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom">
-                        <a href="javascript:eliminar(${id})">
-                            <i class="fa-solid fa-square-minus fa-2x"></i>
-                        </a>
-                    </div>
-
-            
+                          <a href="javascript:eliminar(${id})">
+                            <i class="fa-solid fa-trash"></i>
+                          </a>
+                        </div>            
                         `;
 
       detalleCarrito.append(row);
@@ -341,8 +339,8 @@ class GestionarProductos {
     Swal.fire({
       title: 'Estás segura/o que deseas eliminar el producto?',
       showCancelButton: true,
-      confirmButtonColor: '#00355e',
-      cancelButtonColor: '#e65757',
+      confirmButtonColor: '#e65757',
+      cancelButtonColor: '#00355e',
       confirmButtonText: 'Si, eliminalo',
       cancelButtonText: 'No, cancela',
     }).then((result) => {

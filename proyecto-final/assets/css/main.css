@@ -5,6 +5,18 @@
   background-color: #fff;
 }
 
+.header .cart {
+  cursor: pointer;
+  text-decoration: none;
+}
+.header .cart i {
+  color: #00355e;
+}
+.header .cart #badgeCarrito {
+  background-color: #7c7c7c !important;
+  padding: 8px;
+}
+
 .iconos {
   display: flex;
   flex-direction: row;
@@ -189,7 +201,9 @@ body {
   background-color: #00355e;
 }
 
-/* ----  SECTION ---- */
+/* ---- CART SECTION ---- */
+.offcanvas-header {
+}
 .precio {
   font-size: 2rem;
 }
@@ -208,4 +222,19 @@ body {
 .offcanvas {
   margin-top: 95px;
   border-radius: 10px 0 0 0;
+}
+
+#idCarrito .fa-trash {
+  color: #00355e;
+}
+
+/* POPUP */
+.swal2-popup {
+  padding: 0 0 30px !important;
+}
+.swal2-title {
+  padding: 30px 1em 0 !important;
+  font-size: 28px !important;
+  line-height: 1.3 !important;
+  color: #212121 !important;
 }

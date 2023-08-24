@@ -68,7 +68,17 @@ document.addEventListener('DOMContentLoaded', function () {
 fetch('/assets/json/products.json')
   .then((response) => response.json())
   .then((data) => {
-    // Aquí puedes trabajar con los datos del JSON
+    // Trabajar con los datos del JSON:
+    // Acceder a la matriz de productos
+    const productos = data.productos;
+    // Iterar a través de los productos y hacer algo con ellos
+    productos.forEach((producto) => {
+      console.log(`ID: ${producto.id}`);
+      console.log(`Nombre: ${producto.name}`);
+      console.log(`Marca: ${producto.brand}`);
+      // ... y así sucesivamente
+    });
+
     console.log(data.productos); // Mostrará la matriz de productos en la consola
   })
   .catch((error) => {
