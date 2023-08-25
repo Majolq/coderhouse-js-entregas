@@ -202,7 +202,25 @@ body {
 }
 
 /* ---- CART SECTION ---- */
+.offcanvas {
+  color: #363636;
+}
 .offcanvas-header {
+  border-radius: 10px 0 0 0;
+  background-color: #e0e0e0 !important;
+}
+.offcanvas-header h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #645d59;
+}
+#idCarrito .carrito-header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #7c7c7c;
 }
 .precio {
   font-size: 2rem;
@@ -226,6 +244,20 @@ body {
 
 #idCarrito .fa-trash {
   color: #00355e;
+}
+
+.cart-footer {
+  margin-top: 10px;
+  padding-bottom: 16px !important;
+}
+.cart-footer--total {
+  font-size: 18px;
+  color: #645d59;
+}
+.cart-footer--price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #645d59;
 }
 
 /* POPUP */

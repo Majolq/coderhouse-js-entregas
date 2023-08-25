@@ -31,7 +31,7 @@ document.querySelector('#buscar').addEventListener('keyup', () => {
 function addCarrito(id) {
   const prod = document.querySelector('#card_' + id);
 
-  let name = prod.querySelector('h4').textContent;
+  let name = prod.querySelector('.model').textContent;
   //elimino el simbolo $ para poder convertir a numero
   let price = prod.querySelector('.price').textContent.substring(1, prod.querySelector('.price').textContent.length);
   let img = prod.querySelector('img').src;
@@ -39,6 +39,8 @@ function addCarrito(id) {
   let producto = new Producto(id, name, price, img);
 
   gestor.addCart(producto);
+
+  console.log(price + img);
 }
 
 /**
@@ -70,16 +72,16 @@ fetch('/assets/json/products.json')
   .then((data) => {
     // Trabajar con los datos del JSON:
     // Acceder a la matriz de productos
-    const productos = data.productos;
-    // Iterar a través de los productos y hacer algo con ellos
-    productos.forEach((producto) => {
+    const products = data.products;
+    // Iterar a través de los products y hacer algo con ellos
+    products.forEach((producto) => {
       console.log(`ID: ${producto.id}`);
       console.log(`Nombre: ${producto.name}`);
       console.log(`Marca: ${producto.brand}`);
       // ... y así sucesivamente
     });
 
-    console.log(data.productos); // Mostrará la matriz de productos en la consola
+    console.log(data.products); // Mostrará la matriz de productos en la consola
   })
   .catch((error) => {
     console.error('Error al cargar el archivo JSON:', error);

@@ -177,7 +177,7 @@ class GestionarProductos {
       return false;
     } else {
       productos.forEach((producto) => {
-        const { id, brand, name, price, img, amount, description } = producto;
+        const { id, brand, name, description, price, img } = producto;
 
         let prod = document.createElement('li');
         prod.classList.add('item');
@@ -263,12 +263,12 @@ class GestionarProductos {
   }
 
   mostrarCarrito() {
-    let detalleCarrito = document.querySelector('#idCarrito');
+    let detalleCarrito = document.querySelector('#idCarritoContent');
     detalleCarrito.innerHTML = '';
     let total = 0;
 
     carrito.forEach((producto) => {
-      const { id, brand, name, price, img, amount, description } = producto;
+      const { id, img, name, price, amount } = producto;
 
       const row = document.createElement('div');
       row.classList.add('row');
@@ -305,10 +305,10 @@ class GestionarProductos {
     row.classList.add('row');
 
     row.innerHTML = `
-                     <div class="col-4 d-flex align-items-center justify-content-start p-2 border-bottom">
+                    <div class="col-6 d-flex align-items-center justify-content-start p-2 border-bottom cart-footer cart-footer--total">
                         Total a pagar:
                     </div>
-                    <div class="col-8 d-flex align-items-center justify-content-end p-2 border-bottom">
+                    <div class="col-6 d-flex align-items-center justify-content-end p-2 border-bottom cart-footer cart-footer--price">
                         <b> $ ${total}</b>
                     </div>
                     
