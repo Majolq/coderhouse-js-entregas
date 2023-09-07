@@ -4,7 +4,7 @@ class GestionarProductos {
       {
         id: 1,
         brand: 'Dell',
-        name: 'Notebook',
+        titulo: 'Notebook',
         description: 'Gamer G5 5525 15.6"',
         price: 960000,
         stock: 50,
@@ -14,7 +14,7 @@ class GestionarProductos {
       {
         id: 2,
         brand: 'Apple',
-        name: 'Celular',
+        titulo: 'Celular',
         description: 'Iphone 14 Pro Max',
         price: 570000,
         stock: 50,
@@ -24,7 +24,7 @@ class GestionarProductos {
       {
         id: 3,
         brand: 'Amazfit',
-        name: 'Smartwatch',
+        titulo: 'Smartwatch',
         description: 'Bip 3',
         price: 48000,
         stock: 50,
@@ -34,7 +34,7 @@ class GestionarProductos {
       {
         id: 4,
         brand: 'Logitech',
-        name: 'Auriculares',
+        titulo: 'Auriculares',
         description: 'Gamer G435',
         price: 32000,
         stock: 50,
@@ -44,7 +44,7 @@ class GestionarProductos {
       {
         id: 5,
         brand: 'Logitech',
-        name: 'Mouse',
+        titulo: 'Mouse',
         description: 'Large M650 Graphite',
         price: 41000,
         stock: 50,
@@ -54,7 +54,7 @@ class GestionarProductos {
       {
         id: 6,
         brand: 'Microsoft',
-        name: 'Teclado',
+        titulo: 'Teclado',
         description: 'Bluetooth Compact Black',
         price: 28000,
         stock: 50,
@@ -64,7 +64,7 @@ class GestionarProductos {
       {
         id: 7,
         brand: 'Viewsonic',
-        name: 'Monitor',
+        titulo: 'Monitor',
         description: 'Gamer Elite 27" Xg270qc',
         price: 386000,
         stock: 50,
@@ -74,7 +74,7 @@ class GestionarProductos {
       {
         id: 8,
         brand: 'Trust',
-        name: 'Silla',
+        titulo: 'Silla',
         description: 'Gamer Gxt 708',
         price: 267000,
         stock: 50,
@@ -84,7 +84,7 @@ class GestionarProductos {
       {
         id: 9,
         brand: 'JBL',
-        name: 'Parlante',
+        titulo: 'Parlante',
         description: 'Flip 6',
         price: 110000,
         stock: 50,
@@ -94,7 +94,7 @@ class GestionarProductos {
       {
         id: 10,
         brand: 'Sandisk',
-        name: 'Pen Drive',
+        titulo: 'Pen Drive',
         description: '32Gb Cruzer Blade 2.0',
         price: 3200,
         stock: 50,
@@ -104,7 +104,7 @@ class GestionarProductos {
       {
         id: 11,
         brand: 'Logitech',
-        name: 'Webcam',
+        titulo: 'Webcam',
         description: 'Cámara Web C505',
         price: 34000,
         stock: 50,
@@ -114,7 +114,7 @@ class GestionarProductos {
       {
         id: 12,
         brand: 'JBL',
-        name: 'Micrófono',
+        titulo: 'Micrófono',
         description: 'Premium Doble Usb',
         price: 82000,
         stock: 50,
@@ -124,7 +124,7 @@ class GestionarProductos {
       {
         id: 13,
         brand: 'Xiaomi',
-        name: 'Cargador',
+        titulo: 'Cargador',
         description: 'Powerbank 20000Mah Fast Charge 18W',
         price: 33000,
         stock: 50,
@@ -134,7 +134,7 @@ class GestionarProductos {
       {
         id: 14,
         brand: 'Samsung',
-        name: 'Tablet',
+        titulo: 'Tablet',
         description: 'S7 Fe 12" 6Gb 128Gb',
         price: 465000,
         stock: 50,
@@ -144,7 +144,7 @@ class GestionarProductos {
       {
         id: 15,
         brand: 'Trust',
-        name: 'Mousepad',
+        titulo: 'Mousepad',
         description: 'Gxt764 Iluminación Rgb',
         price: 27000,
         stock: 50,
@@ -154,7 +154,7 @@ class GestionarProductos {
       {
         id: 16,
         brand: 'Sony',
-        name: 'Joystick',
+        titulo: 'Joystick',
         description: 'Inalámbrico Ps5 Midnight Black',
         price: 74000,
         stock: 50,
@@ -177,11 +177,11 @@ class GestionarProductos {
       return false;
     } else {
       productos.forEach((producto) => {
-        const { id, brand, name, description, price, img } = producto;
+        const { id, brand, titulo, description, stock, price, img } = producto;
 
         let prod = document.createElement('li');
         prod.classList.add('item');
-        prod.id = 'card_' + id;
+        prod.id = 'row_' + id;
         prod.innerHTML = `
             <article class="card">
               <div class="image">
@@ -190,7 +190,7 @@ class GestionarProductos {
               <div class="text">
                   <div class="info-content">
                       <h3 class="brand">${brand}</h3>
-                      <h4 class="model">${name}</h4>
+                      <h4 class="model">${titulo}</h4>
                       <p class="description">${description.substring(0, 120)}</p>
                   </div>
                   <div class="price-btn-content">
@@ -212,7 +212,7 @@ class GestionarProductos {
   }
 
   buscar(valor) {
-    let resultado = productos.filter((producto) => producto.brand.toLowerCase().includes(valor.toLowerCase()) || producto.name.toLowerCase().includes(valor.toLowerCase()) || producto.description.toLowerCase().includes(valor.toLowerCase()));
+    let resultado = productos.filter((producto) => producto.brand.toLowerCase().includes(valor.toLowerCase()) || producto.titulo.toLowerCase().includes(valor.toLowerCase()) || producto.description.toLowerCase().includes(valor.toLowerCase()));
     this.cargarProductos(resultado);
   }
 
@@ -220,13 +220,10 @@ class GestionarProductos {
     const existe = carrito.some((producto) => producto.id === item.id);
 
     if (existe) {
-      //mapeo el producto con el id pasado por parametro con su cantidad actualizada
-      const articulo = carrito.map((producto) => {
+      // Actualiza la cantidad de productos existentes
+      carrito.forEach((producto) => {
         if (producto.id === item.id) {
-          producto.amount++;
-          return producto;
-        } else {
-          return producto;
+          producto.stock++;
         }
       });
 
@@ -258,9 +255,7 @@ class GestionarProductos {
     this.guardarCarrito();
   }
 
-  guardarCarrito() {
-    //desarrollar
-  }
+  guardarCarrito() {}
 
   mostrarCarrito() {
     let detalleCarrito = document.querySelector('#idCarritoContent');
@@ -268,27 +263,27 @@ class GestionarProductos {
     let total = 0;
 
     carrito.forEach((producto) => {
-      const { id, img, name, price, amount } = producto;
+      const { id, img, titulo, price, stock } = producto;
 
       const row = document.createElement('div');
       row.classList.add('row');
-      total += parseInt(price) * amount;
+      total += parseInt(price) * stock;
 
       row.innerHTML = `
                         <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            <img src="./assets/images/products/${img}" width="80"/>
+                            <img src="${img}" width="80"/>
                         </div>
 
                         <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            <h4 class="model">${name}</h4>
+                            <h4 class="model"> ${titulo} </h4>
                         </div>
 
-                        <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
-                            <h5 class="price">$${price}</h5>
+                        <div class="col-3 d-flex align-items-center p-2 border-bottom">
+                            <h5 class="price"> $${price} </h5>
                         </div>  
                         
                         <div class="col-1 d-flex align-items-center justify-content-end p-2 border-bottom">
-                            <p class="amount">${amount}</p>
+                            <p class="stock"> ${stock} </p>
                         </div>
 
                         <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom">
@@ -328,7 +323,7 @@ class GestionarProductos {
     let contarProductos = 0;
 
     carrito.forEach((producto) => {
-      contarProductos = contarProductos + parseInt(producto.amount);
+      contarProductos = contarProductos + parseInt(producto.stock);
     });
 
     return contarProductos;

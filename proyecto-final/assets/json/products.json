@@ -3,7 +3,7 @@
     {
       "id": 1,
       "brand": "Dell",
-      "name": "Notebook",
+      "titulo": "Notebook",
       "description": "Gamer G5 5525",
       "price": 960000,
       "stock": 50,
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "brand": "Apple",
-      "name": "Celular",
+      "titulo": "Celular",
       "description": "Iphone 14 Pro Max",
       "price": 570000,
       "stock": 50,
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "brand": "Amazfit",
-      "name": "Smartwatch",
+      "titulo": "Smartwatch",
       "description": "Bip 3",
       "price": 48000,
       "stock": 50,
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "brand": "Logitech",
-      "name": "Auriculares",
+      "titulo": "Auriculares",
       "description": "Gamer G435",
       "price": 32000,
       "stock": 50,
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "brand": "Logitech",
-      "name": "Mouse",
+      "titulo": "Mouse",
       "description": "Large M650 Graphite",
       "price": 41000,
       "stock": 50,
@@ -53,7 +53,7 @@
     {
       "id": 6,
       "brand": "Microsoft",
-      "name": "Teclado",
+      "titulo": "Teclado",
       "description": "Bluetooth Compact Black",
       "price": 28000,
       "stock": 50,
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "brand": "Viewsonic",
-      "name": "Monitor",
+      "titulo": "Monitor",
       "description": "Gamer Elite 27 Xg270qc",
       "price": 386000,
       "stock": 50,
@@ -73,7 +73,7 @@
     {
       "id": 8,
       "brand": "Trust",
-      "name": "Silla",
+      "titulo": "Silla",
       "description": "Gamer Gxt 708",
       "price": 267000,
       "stock": 50,
@@ -83,7 +83,7 @@
     {
       "id": 9,
       "brand": "JBL",
-      "name": "Parlante",
+      "titulo": "Parlante",
       "description": "Flip 6",
       "price": 110000,
       "stock": 50,
@@ -93,7 +93,7 @@
     {
       "id": 10,
       "brand": "Sandisk",
-      "name": "Pen Drive",
+      "titulo": "Pen Drive",
       "description": "32Gb Cruzer Blade 2.0",
       "price": 3200,
       "stock": 50,
@@ -103,7 +103,7 @@
     {
       "id": 11,
       "brand": "Logitech",
-      "name": "Webcam",
+      "titulo": "Webcam",
       "description": "Cámara Web C505",
       "price": 34000,
       "stock": 50,
@@ -113,7 +113,7 @@
     {
       "id": 12,
       "brand": "JBL",
-      "name": "Micrófono",
+      "titulo": "Micrófono",
       "description": "Premium Doble Usb",
       "price": 82000,
       "stock": 50,
@@ -123,7 +123,7 @@
     {
       "id": 13,
       "brand": "Xiaomi",
-      "name": "Cargador",
+      "titulo": "Cargador",
       "description": "Powerbank 20000Mah Fast Charge 18W",
       "price": 33000,
       "stock": 50,
@@ -133,7 +133,7 @@
     {
       "id": 14,
       "brand": "Samsung",
-      "name": "Tablet",
+      "titulo": "Tablet",
       "description": "S7 Fe 12 6Gb 128Gb",
       "price": 465000,
       "stock": 50,
@@ -143,7 +143,7 @@
     {
       "id": 15,
       "brand": "Trust",
-      "name": "Mousepad",
+      "titulo": "Mousepad",
       "description": "Gxt764 Iluminación Rgb",
       "price": 27000,
       "stock": 50,
@@ -153,7 +153,7 @@
     {
       "id": 16,
       "brand": "Sony",
-      "name": "Joystick",
+      "titulo": "Joystick",
       "description": "Inalámbrico Ps5 Midnight Black",
       "price": 74000,
       "stock": 50,

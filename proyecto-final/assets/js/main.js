@@ -6,9 +6,6 @@ let gestor;
 const key_carrito = 'carrito';
 
 document.addEventListener('DOMContentLoaded', () => {
-  //UTILIZO OPERADOR OR PARA CHEQUEAR
-  carrito = JSON.parse(localStorage.getItem(key_carrito)) || [];
-
   gestor = new GestionarProductos();
   gestor.iniciar();
 });
@@ -29,18 +26,15 @@ document.querySelector('#buscar').addEventListener('keyup', () => {
  * @param {*} id  id del producto a agregar
  */
 function addCarrito(id) {
-  const prod = document.querySelector('#card_' + id);
+  const prod = document.querySelector('#row_' + id);
 
-  let name = prod.querySelector('.model').textContent;
-  //elimino el simbolo $ para poder convertir a numero
-  let price = prod.querySelector('.price').textContent.substring(1, prod.querySelector('.price').textContent.length);
   let img = prod.querySelector('img').src;
-
-  let producto = new Producto(id, name, price, img);
+  let titulo = prod.querySelector('.model').textContent;
+  //elimina el símbolo $ para poder convertirlo a número
+  let price = prod.querySelector('.price').textContent.substring(1);
+  let producto = new Producto(img, titulo, price, id);
 
   gestor.addCart(producto);
-
-  console.log(price + img);
 }
 
 /**
@@ -59,30 +53,5 @@ document.addEventListener('DOMContentLoaded', function () {
     type: 'loop',
     perPage: 1,
   });
-  // var splide = new Splide('.splide');
   splide.mount();
 });
-
-/**
- * llamar al archivo json
- * @param {String}
- */
-fetch('/assets/json/products.json')
-  .then((response) => response.json())
-  .then((data) => {
-    // Trabajar con los datos del JSON:
-    // Acceder a la matriz de productos
-    const products = data.products;
-    // Iterar a través de los products y hacer algo con ellos
-    products.forEach((producto) => {
-      console.log(`ID: ${producto.id}`);
-      console.log(`Nombre: ${producto.name}`);
-      console.log(`Marca: ${producto.brand}`);
-      // ... y así sucesivamente
-    });
-
-    console.log(data.products); // Mostrará la matriz de productos en la consola
-  })
-  .catch((error) => {
-    console.error('Error al cargar el archivo JSON:', error);
-  });
